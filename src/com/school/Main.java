@@ -1,5 +1,8 @@
 package com.school;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         Student[] students = new Student[3];
@@ -23,6 +26,16 @@ public class Main {
         for (Course c : courses) {
             c.displayInfo();
             System.out.println();
+        }
+
+        List<AttendanceRecord> attendanceLog = new ArrayList<>();
+        attendanceLog.add(new AttendanceRecord(students[0].getStudentId(), courses[0].getCourseId(), "Present"));
+        attendanceLog.add(new AttendanceRecord(students[1].getStudentId(), courses[1].getCourseId(), "Absent"));
+        attendanceLog.add(new AttendanceRecord(students[2].getStudentId(), courses[2].getCourseId(), "Late")); // Invalid
+
+        System.out.println("---- Attendance Records ----");
+        for (AttendanceRecord record : attendanceLog) {
+            record.displayRecord();
         }
     }
 }
