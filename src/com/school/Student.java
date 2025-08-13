@@ -10,6 +10,14 @@ public class Student {
         this.name = name;
     }
 
+    public int getStudentId() {
+        return studentId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     public void displayInfo() {
         System.out.println("Student Name: " + name);
         System.out.println("Student ID: " + studentId);
