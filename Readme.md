@@ -1,3 +1,4 @@
+
 ## Session 2: Core Domain Modelling
 - Defined `Student` class with `studentId`, `name`, `setDetails()`, and `displayDetails()` method.
 - Defined `Course` class with `courseId`, `courseName`, `setDetails()`, and `displayDetails()` method.
@@ -40,3 +41,6 @@
 - Created `Staff.java` extending `Person`, adding a `role` attribute and its own `displayDetails()`.
 - Demonstrated creation and display of `Student`, `Teacher`, and `Staff` objects in `Main.java`.
 - Updated `AttendanceRecord` creation to use the inherited `getId()` method.
+
+
+
