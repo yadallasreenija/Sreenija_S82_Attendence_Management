@@ -1,45 +1,24 @@
 package com.school;
 
-import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        // Students
-        Student s1 = new Student("Alice", "10th Grade");
-        Student s2 = new Student("Bob", "11th Grade");
-        Student s3 = new Student("Charlie", "12th Grade");
+        ArrayList<Student> students = new ArrayList<>();
+        students.add(new Student(1, "Alice", 10));
+        students.add(new Student(2, "Bob", 11));
 
-        // Teachers
-        Teacher t1 = new Teacher("Mr. Smith", "Mathematics");
-        Teacher t2 = new Teacher("Ms. Johnson", "Physics");
+        ArrayList<Course> courses = new ArrayList<>();
+        courses.add(new Course(101, "Mathematics"));
+        courses.add(new Course(102, "Science"));
 
-        // Staff
-        Staff staff1 = new Staff("John Doe", "Clerk");
+        ArrayList<AttendanceRecord> records = new ArrayList<>();
+        records.add(new AttendanceRecord(1, 101, "Present"));
+        records.add(new AttendanceRecord(2, 102, "Absent"));
 
-        // Print Students
-        System.out.println("---- Students ----");
-        s1.displayDetails();
-        s2.displayDetails();
-        s3.displayDetails();
-
-        // Print Teachers
-        System.out.println("\n---- Teachers ----");
-        t1.displayDetails();
-        t2.displayDetails();
-
-        // Print Staff
-        System.out.println("\n---- Staff ----");
-        staff1.displayDetails();
-
-        // Attendance Records
-        System.out.println("\n---- Attendance Records ----");
-        LocalDate today = LocalDate.of(2025, 9, 4);
-        AttendanceRecord a1 = new AttendanceRecord(s1.getId(), today, true);
-        AttendanceRecord a2 = new AttendanceRecord(s2.getId(), today, false);
-        AttendanceRecord a3 = new AttendanceRecord(s3.getId(), today, true);
-
-        a1.displayRecord();
-        a2.displayRecord();
-        a3.displayRecord();
+        FileStorageService storageService = new FileStorageService();
+        storageService.saveData(students, "students.txt");
+        storageService.saveData(courses, "courses.txt");
+        storageService.saveData(records, "attendance_log.txt");
     }
 }
