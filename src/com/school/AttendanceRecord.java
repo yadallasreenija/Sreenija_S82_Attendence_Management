@@ -1,21 +1,19 @@
 package com.school;
 
-import java.time.LocalDate;
-
-public class AttendanceRecord {
+public class AttendanceRecord implements Storable {
     private int studentId;
-    private LocalDate date;
-    private boolean present;
+    private int courseId;
+    private String status; // Present/Absent
 
-    public AttendanceRecord(int studentId, LocalDate date, boolean present) {
+    public AttendanceRecord(int studentId, int courseId, String status) {
         this.studentId = studentId;
-        this.date = date;
-        this.present = present;
+        this.courseId = courseId;
+        this.status = status;
     }
 
-    public void displayRecord() {
-        System.out.println("Student ID: " + studentId 
-                           + ", Date: " + date 
-                           + ", Present: " + present);
+    @Override
+    public String toDataString() {
+        return studentId + "," + courseId + "," + status;
     }
+
 }
