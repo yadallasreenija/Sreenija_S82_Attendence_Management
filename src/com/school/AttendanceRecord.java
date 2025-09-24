@@ -3,7 +3,7 @@ package com.school;
 public class AttendanceRecord implements Storable {
     private Student student;
     private Course course;
-    private String status; // Present/Absent
+    private String status;
 
     public AttendanceRecord(Student student, Course course, String status) {
         this.student = student;
@@ -25,12 +25,20 @@ public class AttendanceRecord implements Storable {
 
     public void displayRecord() {
         System.out.println("Student: " + student.getName() + " (ID: " + student.getId() + "), " +
-                "Course: " + course.getCourseName() + " (ID: " + course.getCourseId() + "), " +
+                "Course: " + course.getName() + " (ID: " + course.getId() + "), " +
                 "Status: " + status);
     }
 
     @Override
+    public String toString() {
+        return "Student: " + student.getName() + " (ID: " + student.getId() + "), " +
+                "Course: " + course.getName() + " (ID: " + course.getId() + "), " +
+                "Status: " + status;
+    }
+
+    @Override
     public String toDataString() {
-        return student.getId() + "," + course.getCourseId() + "," + status;
+        // This will be saved to attendance_log.txt
+        return student.getId() + "," + course.getId() + "," + status;
     }
 }

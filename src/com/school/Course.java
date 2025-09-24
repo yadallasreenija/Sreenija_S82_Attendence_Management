@@ -1,24 +1,30 @@
 package com.school;
 
 public class Course implements Storable {
-    private int courseId;
-    private String courseName;
+    private int id;
+    private String name;
 
-    public Course(int courseId, String courseName) {
-        this.courseId = courseId;
-        this.courseName = courseName;
+    public Course(int id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
-    public int getCourseId() {
-        return courseId;
+    public int getId() {
+        return id;
     }
 
-    public String getCourseName() {
-        return courseName;
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String toString() {
+        return "Course: " + name + " (ID: " + id + ")";
     }
 
     @Override
     public String toDataString() {
-        return courseId + "," + courseName;
+        // This is what FileStorageService will write to file
+        return id + "," + name;
     }
 }
