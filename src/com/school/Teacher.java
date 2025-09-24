@@ -10,7 +10,7 @@ public class Teacher extends Person {
 
     @Override
     public void displayDetails() {
-        System.out.println("ID: " + id + ", Name: " + name);
+        super.displayDetails();
         System.out.println("Role: Teacher, Subject: " + subjectTaught);
     }
 }

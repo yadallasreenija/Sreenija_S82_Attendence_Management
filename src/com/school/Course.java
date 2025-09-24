@@ -1,4 +1,3 @@
-
 package com.school;
 
 public class Course implements Storable {
@@ -8,6 +7,14 @@ public class Course implements Storable {
     public Course(int courseId, String courseName) {
         this.courseId = courseId;
         this.courseName = courseName;
+    }
+
+    public int getCourseId() {
+        return courseId;
+    }
+
+    public String getCourseName() {
+        return courseName;
     }
 
     @Override

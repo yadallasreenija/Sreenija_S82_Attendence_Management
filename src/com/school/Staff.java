@@ -1,16 +1,16 @@
 package com.school;
 
 public class Staff extends Person {
-    private String position;
+    private String department;
 
-    public Staff(String name, String position) {
+    public Staff(String name, String department) {
         super(name);
-        this.position = position;
+        this.department = department;
     }
 
     @Override
     public void displayDetails() {
-        System.out.println("ID: " + id + ", Name: " + name);
-        System.out.println("Role: Staff, Position: " + position);
+        super.displayDetails();
+        System.out.println("Role: Staff, Department: " + department);
     }
 }
